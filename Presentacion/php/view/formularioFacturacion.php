@@ -7,7 +7,7 @@
   <input type='hidden' name='id' value='<?php echo $cliente->getId() ?>'>
   <div class="mb-3">
     <label class="form-label">Importe Factura:</label>
-    <input class="form-control" type='number' name='importeUltimaFactura'>
+    <input class="form-control" type='number' step="0.01" name='importeUltimaFactura'>
   </div>
   <input type='hidden' name='facturar' value='facturar'>
   <div class="mb-3">

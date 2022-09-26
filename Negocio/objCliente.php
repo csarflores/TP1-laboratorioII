@@ -84,8 +84,8 @@ class cliente{
 		return $this->cantidadDeCompras;
 	}
 
-	public function setCantidadDeCompras($cantidadDeCompras){
-		$this->cantidadDeCompras = $cantidadDeCompras;
+	public function setCantidadDeCompras($cantidad){
+		$this->cantidadDeCompras = $cantidad;
 	}
 
 	public function getTipoDeCliente(){
@@ -113,7 +113,7 @@ class cliente{
 	}
 
 	public function getFechaModificacion(){
-		return $this->fechaCreacion;
+		return $this->fechaModificacion;
 	}
 
 	public function setFechaModificacion($fechaModificacion){

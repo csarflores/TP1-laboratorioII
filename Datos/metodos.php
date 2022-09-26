@@ -95,7 +95,7 @@ class CrudCliente
   public function actualizar($cliente)
   {
     $db = baseDatos::conectar();
-    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apelllido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, activo=:activo, cant_compras=:cantidadDeCompras, tipo_cliente=:tipoDeCliente, importe_ultima_factura=:importeUltimaFactura, fechaCreacion=:fechaCreacion, fechaModificacion=:fechaModificacion WHERE id=:id');
+    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apellido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, activo=:activo, tipo_cliente=:tipoDeCliente, fechaModificacion=:fechaModificacion WHERE id=:id');
     $actualizar->bindValue('id', $cliente->getId());
     $actualizar->bindValue('nombre', $cliente->getNombre());
     $actualizar->bindValue('apellido', $cliente->getApellido());
@@ -104,10 +104,7 @@ class CrudCliente
     $actualizar->bindValue('telefono', $cliente->getTelefono());
     $actualizar->bindValue('nombreEmpresa', $cliente->getNombreEmpresa());
     $actualizar->bindValue('activo', $cliente->getActivo());
-    $actualizar->bindValue('cantidadDeCompras', $cliente->getCantidadDeCompras());
     $actualizar->bindValue('tipoDeCliente', $cliente->getTipoDeCliente());
-    $actualizar->bindValue('importeUltimaFactura', $cliente->getImporteUltimaFactura());
-    $actualizar->bindValue('fechaCreacion', $cliente->getFechaCreacion());
     $actualizar->bindValue('fechaModificacion', $cliente->getFechaModificacion());
     $actualizar->execute();
   }
@@ -116,9 +113,11 @@ class CrudCliente
  public function facturar($cliente)
  {
    $db = baseDatos::conectar();
-   $actualizar = $db->prepare('UPDATE clientes SET importe_ultima_factura=:importeUltimaFactura WHERE id=:id');
-   $actualizar->bindValue('importeUltimaFactura', $cliente->getImporteUltimaFactura());
-   $actualizar->execute();
+   $facturar = $db->prepare('UPDATE clientes SET cant_compras=:cantidadDeCompras, importe_ultima_factura=:importeUltimaFactura WHERE id=:id');
+   $facturar->bindValue('id', $cliente->getId());
+   $facturar->bindValue('cantidadDeCompras', $cliente->getCantidadDeCompras());
+   $facturar->bindValue('importeUltimaFactura', $cliente->getImporteUltimaFactura());
+   $facturar->execute();
  }
 
   // método para eliminar un cliente, recibe como parámetro el id del cliente

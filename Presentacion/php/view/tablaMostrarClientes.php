@@ -8,8 +8,8 @@ $cliente = new Cliente();
 $listaDeClientes = $crud->mostrar();
 ?>
 
-<div class="row mt-3">
-  <table class="table table-striped table-sm">
+<div class="container mt-4 mb-4">
+  <table class="table table-sm text-sm-start">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
@@ -42,9 +42,9 @@ $listaDeClientes = $crud->mostrar();
           <td><?php echo $cliente->getImporteUltimaFactura() ?></td>
           <td><?php echo $cliente->getFechaCreacion() ?></td>
           <td><?php echo $cliente->getFechaModificacion() ?></td>
-          <td><a href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=facturar"><span class="icon-doc" style="margin: 3px;"></span></a></td>
-          <td><a href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=actualizar"><span class="icon-note" style="margin: 3px;"></span></a></td>
-          <td><a href="../../Negocio/Controller/controladorCliente.php?id=<?php echo $cliente->getId() ?>&accion=eliminar"><span class="icon-trash" style="margin: 3px;"></span></a></td>
+          <td><a class="accion" href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=facturar"><i class="bi bi-receipt" style="margin: 3px"></i></a></td>
+          <td><a class="accion" href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=actualizar"><i class="bi bi-pencil-square" style="margin: 3px;"></i></a></td>
+          <td><a class="accion" href="../../Negocio/Controller/controladorCliente.php?id=<?php echo $cliente->getId() ?>&accion=eliminar"><i class="bi bi-trash" style="margin: 3px;"></i></a></td>
         </tr>
       <?php } ?>
     </tbody>
