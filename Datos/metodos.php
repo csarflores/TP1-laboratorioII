@@ -48,12 +48,12 @@ class CrudCliente
       $atributoCliente->setCiudad($cliente['ciudad']);
       $atributoCliente->setTelefono($cliente['telefono']);
       $atributoCliente->setNombreEmpresa($cliente['nombre_empresa']);
-      $atributoCliente->setActivo($cliente['activo']);
-      $atributoCliente->setCantidadDeCompras($cliente['cant_compras']);
+      $atributoCliente->setActivo($cliente['estado']);
+      $atributoCliente->setCantidadDeCompras($cliente['cantidad_compras']);
       $atributoCliente->setTipoDeCliente($cliente['tipo_cliente']);
       $atributoCliente->setImporteUltimaFactura($cliente['importe_ultima_factura']);
-      $atributoCliente->setFechaCreacion($cliente['fechaCreacion']);
-      $atributoCliente->setFechaModificacion($cliente['fechaModificacion']);
+      $atributoCliente->setFechaCreacion($cliente['fecha_creacion']);
+      $atributoCliente->setFechaModificacion($cliente['fecha_modificacion']);
       $listarClientes[] = $atributoCliente;
     }
     return $listarClientes;
@@ -77,12 +77,12 @@ class CrudCliente
       $clienteObtenido->setCiudad($cliente['ciudad']);
       $clienteObtenido->setTelefono($cliente['telefono']);
       $clienteObtenido->setNombreEmpresa($cliente['nombre_empresa']);
-      $clienteObtenido->setActivo($cliente['activo']);
-      $clienteObtenido->setCantidadDeCompras($cliente['cant_compras']);
+      $clienteObtenido->setActivo($cliente['estado']);
+      $clienteObtenido->setCantidadDeCompras($cliente['cantidad_compras']);
       $clienteObtenido->setTipoDeCliente($cliente['tipo_cliente']);
       $clienteObtenido->setImporteUltimaFactura($cliente['importe_ultima_factura']);
-      $clienteObtenido->setFechaCreacion($cliente['fechaCreacion']);
-      $clienteObtenido->setFechaModificacion($cliente['fechaModificacion']);
+      $clienteObtenido->setFechaCreacion($cliente['fecha_creacion']);
+      $clienteObtenido->setFechaModificacion($cliente['fecha_odificacion']);
       return $clienteObtenido;
     }catch(Exception $e){
       echo "Ups! No hemos encontrado el cliente. <br>";
@@ -95,7 +95,7 @@ class CrudCliente
   public function actualizar($cliente)
   {
     $db = baseDatos::conectar();
-    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apellido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, activo=:activo, tipo_cliente=:tipoDeCliente, fechaModificacion=:fechaModificacion WHERE id=:id');
+    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apellido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, estado=:activo, tipo_cliente=:tipoDeCliente, fechaModificacion=:fecha_modificacion WHERE id=:id');
     $actualizar->bindValue('id', $cliente->getId());
     $actualizar->bindValue('nombre', $cliente->getNombre());
     $actualizar->bindValue('apellido', $cliente->getApellido());
@@ -113,7 +113,7 @@ class CrudCliente
  public function facturar($cliente)
  {
    $db = baseDatos::conectar();
-   $facturar = $db->prepare('UPDATE clientes SET cant_compras=:cantidadDeCompras, importe_ultima_factura=:importeUltimaFactura WHERE id=:id');
+   $facturar = $db->prepare('UPDATE clientes SET cantidad_compras=:cantidadDeCompras, importe_ultima_factura=:importeUltimaFactura WHERE id=:id');
    $facturar->bindValue('id', $cliente->getId());
    $facturar->bindValue('cantidadDeCompras', $cliente->getCantidadDeCompras());
    $facturar->bindValue('importeUltimaFactura', $cliente->getImporteUltimaFactura());
