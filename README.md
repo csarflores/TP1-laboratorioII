@@ -2,4 +2,4 @@
 
 TRABAJO PRÁCTICO N°1 - LABORATORIO II - TECNICATURA UNIVERSITARIA EN PROGRAMACIÓN - UTN RAFAELA
 
-Desarrollo de ABM en capas utilizando HTML, Boostrap, PHP y MySQL.
+Desarrollo de ABM en capas utilizando HTML, Bootstrap, PHP y MySQL.
