@@ -8,12 +8,12 @@ CREATE TABLE `laboratorio`.`clientes` (
   `ciudad` varchar(30) NOT NULL,
   `telefono` varchar(30) NOT NULL,
   `nombre_empresa` varchar(50) NOT NULL,
-  `activo` tinyint(1) NOT NULL,
-  `cant_compras` mediumint(9) NOT NULL DEFAULT 0,
+  `estado` tinyint(1) NOT NULL,
+  `cantidad_compras` mediumint(9) NOT NULL DEFAULT 0,
   `tipo_cliente` smallint(6) NOT NULL,
   `importe_ultima_factura` decimal(7,2) NOT NULL DEFAULT 0.00,
-  `fechaCreacion` timestamp NOT NULL DEFAULT current_timestamp(),
-  `fechaModificacion` timestamp NOT NULL DEFAULT current_timestamp()
+  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
+  `fecha_modificacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `domicilio`, `ciudad`, `telefono`, `nombre_empresa`, `activo`, `cant_compras`, `tipo_cliente`, `importe_ultima_factura`, `fechaCreacion`, `fechaModificacion`) VALUES
