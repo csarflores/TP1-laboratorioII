@@ -39,7 +39,7 @@ $listaDeClientes = $crud->mostrar();
           <td><?php echo $cliente->getActivo() ?></td>
           <td><?php echo $cliente->getCantidadDeCompras() ?></td>
           <td><?php echo $cliente->getTipoDeCliente() ?></td>
-          <td><?php echo $cliente->getImporteUltimaFactura() ?></td>
+          <td><?php echo "$ ".$cliente->getImporteUltimaFactura() ?></td>
           <td><?php echo $cliente->getFechaCreacion() ?></td>
           <td><?php echo $cliente->getFechaModificacion() ?></td>
           <td><a class="accion" href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=facturar"><i class="bi bi-receipt" style="margin: 3px"></i></a></td>
