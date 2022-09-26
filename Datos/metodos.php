@@ -82,7 +82,7 @@ class CrudCliente
       $clienteObtenido->setTipoDeCliente($cliente['tipo_cliente']);
       $clienteObtenido->setImporteUltimaFactura($cliente['importe_ultima_factura']);
       $clienteObtenido->setFechaCreacion($cliente['fecha_creacion']);
-      $clienteObtenido->setFechaModificacion($cliente['fecha_odificacion']);
+      $clienteObtenido->setFechaModificacion($cliente['fecha_modificacion']);
       return $clienteObtenido;
     }catch(Exception $e){
       echo "Ups! No hemos encontrado el cliente. <br>";
@@ -95,7 +95,7 @@ class CrudCliente
   public function actualizar($cliente)
   {
     $db = baseDatos::conectar();
-    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apellido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, estado=:activo, tipo_cliente=:tipoDeCliente, fechaModificacion=:fecha_modificacion WHERE id=:id');
+    $actualizar = $db->prepare('UPDATE clientes SET nombre=:nombre, apellido=:apellido, domicilio=:domicilio, ciudad=:ciudad, telefono=:telefono, nombre_empresa=:nombreEmpresa, estado=:activo, tipo_cliente=:tipoDeCliente, fecha_modificacion=:fechaModificacion WHERE id=:id');
     $actualizar->bindValue('id', $cliente->getId());
     $actualizar->bindValue('nombre', $cliente->getNombre());
     $actualizar->bindValue('apellido', $cliente->getApellido());
