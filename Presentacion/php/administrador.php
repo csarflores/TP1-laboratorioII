@@ -16,7 +16,7 @@
             <?php
             if (isset($_GET['id'])) {
               //incluye la clase Cliente y CrudCliente
-              require_once('../../Datos/metodos.php');
+              require_once('../../Dato/metodos.php');
               require_once('../../Negocio/objCliente.php');
               $crud = new CrudCliente();
               $cliente = new Cliente();
@@ -45,7 +45,7 @@
         <div class="col col-lg-2"></div>
       </div>
     </div>
-  <?php include 'view/footer.php'; ?>
+    <?php include 'view/footer.php'; ?>
   </div>
 </body>
 

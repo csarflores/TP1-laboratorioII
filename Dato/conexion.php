@@ -11,8 +11,8 @@
    */
     public static function conectar(){
       try{
-        $pdo_options[PDO::ATTR_ERRMODE]=PDO::ERRMODE_EXCEPTION;
-        self::$conexion= new PDO('mysql:host=localhost;dbname=laboratorio','root','',$pdo_options);
+        $pdoOptions[PDO::ATTR_ERRMODE]=PDO::ERRMODE_EXCEPTION;
+        self::$conexion= new PDO('mysql:host=localhost;dbname=laboratorio','root','',$pdoOptions);
         return self::$conexion;
       }catch(PDOException $e){
         die($e->getMessage());

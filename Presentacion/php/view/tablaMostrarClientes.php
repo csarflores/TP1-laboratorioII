@@ -1,6 +1,6 @@
 <?php
 //incluye la clase Cliente y CrudCliente
-require_once('../../Datos/metodos.php');
+require_once('../../Dato/metodos.php');
 require_once('../../Negocio/objCliente.php');
 $crud = new CrudCliente();
 $cliente = new Cliente();
