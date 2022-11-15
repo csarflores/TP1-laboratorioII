@@ -85,10 +85,9 @@ class CrudCliente
       $clienteObtenido->setFechaModificacion($cliente['fecha_modificacion']);
       return $clienteObtenido;
     }catch(Exception $e){
-      echo "Ups! No hemos encontrado el cliente. <br>";
+      echo "Ups! No hemos encontrado el cliente. <br> \n";
       echo "Error: " . $e;
     }
-
   }
 
   // método para actualizar un cliente, recibe como parámetro el cliente

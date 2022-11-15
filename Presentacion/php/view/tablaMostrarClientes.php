@@ -1,6 +1,6 @@
 <?php
 //incluye la clase Cliente y CrudCliente
-require_once('../../Dato/metodos.php');
+require_once('../../Dato/metodoCliente.php');
 require_once('../../Negocio/objCliente.php');
 $crud = new CrudCliente();
 $cliente = new Cliente();
@@ -42,7 +42,13 @@ $listaDeClientes = $crud->mostrar();
           <td><?php echo "$ ".$cliente->getImporteUltimaFactura() ?></td>
           <td><?php echo $cliente->getFechaCreacion() ?></td>
           <td><?php echo $cliente->getFechaModificacion() ?></td>
-          <td><a class="accion" href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=facturar"><i class="bi bi-receipt" style="margin: 3px"></i></a></td>
+
+          <?php 
+            if($cliente->getActivo()==1)
+            {
+              echo '<td><a class="accion" href="administrador.php?id='.$cliente->getId().'&accion=tipoComprobante"><i class="bi bi-receipt" style="margin: 3px"></i></a></td>';
+            }
+          ?>
           <td><a class="accion" href="administrador.php?id=<?php echo $cliente->getId() ?>&accion=actualizar"><i class="bi bi-pencil-square" style="margin: 3px;"></i></a></td>
           <td><a class="accion" href="../../Negocio/Controller/controladorCliente.php?id=<?php echo $cliente->getId() ?>&accion=eliminar"><i class="bi bi-trash" style="margin: 3px;"></i></a></td>
         </tr>

@@ -1,4 +1,3 @@
-<?php ?>
 <header>
   <h1 class="m-3">Ingresar cliente</h1>
 </header>
@@ -31,18 +30,18 @@
   </div>
   <div class="col-md-6">
     <label class="form-label">Tipo de cliente:</label>
-      <select name='tipo_cliente' class="form-select">
-        <option value="1">Consumidor final</option>
-        <option value="2">Pyme</option>
-        <option value="3">Gran empresa</option>
-      </select>
+    <select name='tipo_cliente' class="form-select">
+      <option value="1">Consumidor final</option>
+      <option value="2">Pyme</option>
+      <option value="3">Gran empresa</option>
+    </select>
   </div>
   <div class="col-12">
-  <div>
-    <input type='submit' value='Guardar' class="btn btn-success w-50 m-3">
-  </div>
-  <div>
-    <a href="../php/index.php"><button type="button" class="btn btn-link">Volver</button></a>
-  </div>
+    <div>
+      <input type='submit' value='Guardar' class="btn btn-success w-50 m-3">
+    </div>
+    <div>
+      <a href="../php/index.php"><button type="button" class="btn btn-link">Volver</button></a>
+    </div>
   </div>
 </form>

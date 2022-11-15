@@ -9,20 +9,11 @@
 <body>
   <div class="grid text-center">
     <div class="container">
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-md-center mt-5">
         <div class="col col-lg-2"></div>
         <div class="col-md-auto">
           <div>
             <?php
-            if (isset($_GET['id'])) {
-              //incluye la clase Cliente y CrudCliente
-              require_once('../../Dato/metodos.php');
-              require_once('../../Negocio/objCliente.php');
-              $crud = new CrudCliente();
-              $cliente = new Cliente();
-              //busca el cliente utilizando el id, que es enviado por GET desde la vista mostrar.php
-              $cliente = $crud->obtenerCliente($_GET["id"]);
-            }
 
             $accion = isset($_GET['accion']) ? $_GET['accion'] : '';
 
@@ -35,6 +26,9 @@
                 break;
               case "facturar":
                 include('view/formularioFacturacion.php');
+                break;
+              case "tipoComprobante":
+                include('view/facturacion/tipoComprobante.php');
                 break;
               default:
                 echo 'Operacion seleccionada incorrecta.';

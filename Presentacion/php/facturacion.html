@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- CSS cdn bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Aprobación</title>
+    <style>
+      #no {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center" style="padding-top: 10%;">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2"></div>
+          <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header">
+                  Una cosa más
+                </div>
+                <div class="card-body mt-6">
+                    <h2>Profe...</h2>
+                    <h1>¿Pomocione?</h1>
+                </div>
+                <div class="col-md-10">
+                    <a href="http://localhost/TP1-LABORATORIOII/Presentacion/php" class="btn btn-success btn-lg m-3" style="width:12%;">SI</a>
+                    <a href="#" class="btn btn-danger btn-lg m-3" id="no" style="width:12%;">NO</a>
+                </div>
+            </div>
+          </div>
+          <div class="col col-lg-2"></div>
+        </div>
+      </div>
+    </div>    
+  </body>
+  <script>
+    $("#no").on("mouseover", function () {
+      $(this).css({
+        top: Math.random() * window.innerHeight + "px",
+        left: Math.random() * window.innerWidth + "px",
+      });
+    });
+  </script>
+</html>

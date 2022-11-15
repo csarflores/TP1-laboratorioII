@@ -1,6 +1,6 @@
 <?php
 //incluye las clases y funciones
-require('../../Dato/metodos.php');
+require('../../Dato/metodoCliente.php');
 require('../objCliente.php');
 
 $crud = new CrudCliente();

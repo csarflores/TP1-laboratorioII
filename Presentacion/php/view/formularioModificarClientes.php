@@ -1,4 +1,14 @@
-<?php ?>
+<?php 
+//incluye la clase Cliente y CrudCliente
+require_once('../../Dato/metodoCliente.php');
+require_once('../../Negocio/objCliente.php');
+
+//Cliente
+$crudCliente = new CrudCliente();
+$cliente = new Cliente();
+$cliente = $crudCliente->obtenerCliente($_GET['id']);
+?>
+
 <header>
   <h1 class="m-3">Modificar cliente</h1>
 </header>
